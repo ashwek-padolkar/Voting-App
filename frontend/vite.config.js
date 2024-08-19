@@ -7,13 +7,13 @@ export default defineConfig({
   server: {
     proxy: {
       "/user": {
-        target: process.env.serverURL,
+        target: "https://voting-app-1-sgqm.onrender.com",
         changeOrigin: true,
         secure: false,
         rewrite: (path) => path.replace(/^\/user/, "/user"),
       },
       "/candidate": {
-        target: process.env.serverURL,
+        target: "https://voting-app-1-sgqm.onrender.com",
         changeOrigin: true,
         secure: false,
         rewrite: (path) => path.replace(/^\/candidate/, "/candidate"),
