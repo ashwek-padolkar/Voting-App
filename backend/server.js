@@ -6,7 +6,7 @@ require("dotenv").config();
 
 // Handling cors
 const corsOptions = {
-  origin: "",
+  origin: "https://voting-app-mu-navy.vercel.app",
   methods: "GET, POST, DELETE, PATCH, POST, HEAD",
   credentials: true,
 };
