@@ -7,7 +7,7 @@ require("dotenv").config();
 // Handling cors
 const corsOptions = {
   origin: process.env.FRONTEND_URL,
-  methods: "GET, POST, DELETE, PATCH, POST, HEAD",
+  methods: "GET, POST, DELETE, PATCH, PUT, HEAD",
   credentials: true,
 };
 
