@@ -22,14 +22,17 @@ const AddCandidate = () => {
         return;
       }
 
-      const response = await fetch("/candidate", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${userToken}`,
-        },
-        body: JSON.stringify(newCandidate),
-      });
+      const response = await fetch(
+        "https://voting-app-2-dqws.onrender.com/candidate",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${userToken}`,
+          },
+          body: JSON.stringify(newCandidate),
+        }
+      );
 
       if (response.ok) {
         candidateNameElement.current.value = "";

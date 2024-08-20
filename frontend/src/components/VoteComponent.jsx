@@ -19,7 +19,9 @@ const VoteComponent = () => {
   useEffect(() => {
     const fetchCandidates = async () => {
       try {
-        const response = await fetch("/candidate");
+        const response = await fetch(
+          "https://voting-app-2-dqws.onrender.com/candidate"
+        );
         const data = await response.json();
 
         dispatch(candidateSliceActions.setCandidateDetails(data));
@@ -47,12 +49,15 @@ const VoteComponent = () => {
         return;
       }
 
-      const response = await fetch(`/candidate/vote/${id}`, {
-        method: "POST", // or "POST", "PUT", etc., depending on your endpoint
-        headers: {
-          Authorization: `Bearer ${userToken}`, // Pass the Bearer token
-        },
-      });
+      const response = await fetch(
+        `https://voting-app-2-dqws.onrender.com/candidate/vote/${id}`,
+        {
+          method: "POST", // or "POST", "PUT", etc., depending on your endpoint
+          headers: {
+            Authorization: `Bearer ${userToken}`, // Pass the Bearer token
+          },
+        }
+      );
 
       if (response.ok) {
         navigate("/home/vote/response");

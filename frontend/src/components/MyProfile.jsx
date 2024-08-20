@@ -13,12 +13,15 @@ const MyProfile = () => {
           return;
         }
 
-        const response = await fetch("/user/profile", {
-          method: "GET",
-          headers: {
-            Authorization: `Bearer ${userToken}`,
-          },
-        });
+        const response = await fetch(
+          "https://voting-app-2-dqws.onrender.com/user/profile",
+          {
+            method: "GET",
+            headers: {
+              Authorization: `Bearer ${userToken}`,
+            },
+          }
+        );
 
         const data = await response.json();
 
@@ -47,14 +50,17 @@ const MyProfile = () => {
         return;
       }
 
-      const response = await fetch("/user/profile/password", {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${userToken}`, // Pass the Bearer token
-        },
-        body: JSON.stringify(password),
-      });
+      const response = await fetch(
+        "https://voting-app-2-dqws.onrender.com/user/profile/password",
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${userToken}`, // Pass the Bearer token
+          },
+          body: JSON.stringify(password),
+        }
+      );
 
       if (response.ok) {
         currentPasswordElement.current.value = "";

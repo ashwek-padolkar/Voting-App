@@ -17,7 +17,9 @@ const GetCandidates = () => {
   useEffect(() => {
     const fetchCandidates = async () => {
       try {
-        const response = await fetch("/candidate");
+        const response = await fetch(
+          "https://voting-app-2-dqws.onrender.com/candidate"
+        );
         const data = await response.json();
 
         setCandidates(data);

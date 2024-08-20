@@ -16,13 +16,16 @@ const Login = () => {
     };
 
     try {
-      const response = await fetch("/user/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(existingUser),
-      });
+      const response = await fetch(
+        "https://voting-app-2-dqws.onrender.com/user/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(existingUser),
+        }
+      );
 
       if (response.ok) {
         const data = await response.json();

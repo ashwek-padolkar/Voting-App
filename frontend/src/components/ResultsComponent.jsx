@@ -13,7 +13,9 @@ const ResultsComponent = () => {
   useEffect(() => {
     const fetchResults = async () => {
       try {
-        const response = await fetch("/candidate/vote/count");
+        const response = await fetch(
+          "https://voting-app-2-dqws.onrender.com/candidate/vote/count"
+        );
         const data = await response.json();
 
         const partyArrayWithLogos = data.map((party, index) => ({

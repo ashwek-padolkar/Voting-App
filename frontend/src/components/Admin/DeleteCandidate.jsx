@@ -16,12 +16,15 @@ const DeleteCandidate = () => {
         return;
       }
 
-      const response = await fetch(`/candidate/${candidateId}`, {
-        method: "DELETE",
-        headers: {
-          Authorization: `Bearer ${userToken}`,
-        },
-      });
+      const response = await fetch(
+        `https://voting-app-2-dqws.onrender.com/candidate/${candidateId}`,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${userToken}`,
+          },
+        }
+      );
 
       if (response.ok) {
         candidateIdElement.current.value = "";

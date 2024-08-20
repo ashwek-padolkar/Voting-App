@@ -25,14 +25,17 @@ const UpdateCandidate = () => {
         return;
       }
 
-      const response = await fetch(`/candidate/${candidateId}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${userToken}`,
-        },
-        body: JSON.stringify(newCandidate),
-      });
+      const response = await fetch(
+        `https://voting-app-2-dqws.onrender.com/candidate/${candidateId}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${userToken}`,
+          },
+          body: JSON.stringify(newCandidate),
+        }
+      );
 
       if (response.ok) {
         candidateIdElement.current.value = "";

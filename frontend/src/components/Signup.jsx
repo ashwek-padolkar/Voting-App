@@ -57,14 +57,13 @@ const Signup = () => {
         newUser.role === "voter" ? navigate("/home") : navigate("/admin");
 
         alert("Registered successfully.");
+      } else {
+        if (newUser.role === "admin") {
+          alert("Please select the role as 'Voter'");
+        } else {
+          alert("Account already exists. Please Login in.");
+        }
       }
-      // else {
-      //   if (newUser.role === "admin") {
-      //     alert("Please select the role as 'Voter'");
-      //   } else {
-      //     alert("Account already exists. Please Login in.");
-      //   }
-      // }
     } catch (error) {
       console.log("register: ", error);
     }
