@@ -4,6 +4,7 @@ import party1 from "../../assets/bjp-logo.jpg";
 import party2 from "../../assets/inc-logo.jpg";
 import party3 from "../../assets/aap-logo.jpg";
 import party4 from "../../assets/gf-logo.jpg";
+import { API_BASE_URL } from "../../apiConfig";
 
 const GetCandidates = () => {
   // const dispatch = useDispatch();
@@ -17,9 +18,7 @@ const GetCandidates = () => {
   useEffect(() => {
     const fetchCandidates = async () => {
       try {
-        const response = await fetch(
-          "https://voting-app-2-dqws.onrender.com/candidate"
-        );
+        const response = await fetch(`${API_BASE_URL}/candidate`);
         const data = await response.json();
 
         setCandidates(data);
