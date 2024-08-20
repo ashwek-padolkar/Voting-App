@@ -28,13 +28,16 @@ const Signup = () => {
     };
 
     try {
-      const response = await fetch("/user/signup", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newUser),
-      });
+      const response = await fetch(
+        "https://voting-app-2-dqws.onrender.com/user/signup",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newUser),
+        }
+      );
 
       if (response.ok) {
         const data = await response.json();
