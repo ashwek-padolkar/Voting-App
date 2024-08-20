@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "../apiConfig";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -28,16 +29,13 @@ const Signup = () => {
     };
 
     try {
-      const response = await fetch(
-        "https://voting-app-2-dqws.onrender.com/user/signup",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(newUser),
-        }
-      );
+      const response = await fetch(`${API_BASE_URL}/user/signup`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newUser),
+      });
 
       if (response.ok) {
         const data = await response.json();
