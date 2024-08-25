@@ -68,8 +68,8 @@ const Signup = () => {
   };
 
   return (
-    <div className="flex justify-center">
-      <div className="flex min-h-full flex-1 flex-col justify-center border-2 shadow-xl mb-4 px-14 py-6 md:max-w-[623px] lg:max-w-[623px]">
+    <div className="flex justify-center items-center min-h-screen">
+      <div className="flex min-h-[500px] flex-1 flex-col justify-center border-2 shadow-xl mb-4 px-14 py-6 lg:px-8 md:max-w-[623px] lg:max-w-[623px]">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img
             alt="Your Company"

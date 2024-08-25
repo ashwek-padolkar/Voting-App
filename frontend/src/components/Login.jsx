@@ -47,8 +47,8 @@ const Login = () => {
   };
 
   return (
-    <div className="flex justify-center">
-      <div className="flex min-h-full flex-1 flex-col justify-center shadow-xl mb-4 px-6 py-6 border-2 lg:px-8 md:max-w-[420px] lg:max-w-[420px]">
+    <div className="flex justify-center items-center min-h-screen">
+      <div className="flex min-h-[500px] flex-1 flex-col justify-center shadow-xl mb-4 px-6 py-6 border-2 lg:px-8 md:max-w-[420px] lg:max-w-[420px]">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img
             alt="Your Company"
