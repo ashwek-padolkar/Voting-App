@@ -4,6 +4,7 @@ import party1 from "../assets/bjp-logo.jpg";
 import party2 from "../assets/inc-logo.jpg";
 import party3 from "../assets/aap-logo.jpg";
 import party4 from "../assets/gf-logo.jpg";
+import unknownParty from "../assets/unknown.jpg";
 import { API_BASE_URL } from "../apiConfig";
 
 const ResultsComponent = () => {

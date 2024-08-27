@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { API_BASE_URL } from "../../apiConfig";
+import logo from "../../assets/file.png";
 
 const DeleteCandidate = () => {
   const candidateIdElement = useRef();
@@ -40,11 +41,9 @@ const DeleteCandidate = () => {
     <div className="flex justify-center mt-20">
       <div className="flex min-h-full flex-1 flex-col justify-center shadow-xl mb-4 px-6 py-14 border-2 lg:px-8 md:max-w-[420px] lg:max-w-[420px]">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <img
-            alt="Your Company"
-            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-            className="mx-auto h-10 w-auto"
-          />
+          <center>
+            <img className="h-16 rounded-xl" src={logo} alt="Your Company" />
+          </center>
           <h2 className="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
             Delete Candidate
           </h2>

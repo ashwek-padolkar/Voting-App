@@ -8,7 +8,7 @@ const Candidate = ({ candidate, handleVote, partyLogo }) => {
   };
 
   return (
-    <div className="m-4 p-4 2xl:w-1/6  xl:lg:w-1/5 lg:w-1/4 md:w-1/3 border-2 rounded-lg shadow-2xl">
+    <div className="m-4 p-4 2xl:w-1/6  xl:lg:w-1/5 lg:w-1/4 md:w-1/3 border-2 rounded-lg shadow-lg">
       <div className="h-full flex flex-col items-center">
         {partyLogo !== undefined ? (
           <img

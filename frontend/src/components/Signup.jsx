@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import logo from "../assets/file.png";
 import { API_BASE_URL } from "../apiConfig";
 
 const Signup = () => {
@@ -71,11 +72,9 @@ const Signup = () => {
     <div className="flex justify-center items-center min-h-screen">
       <div className="flex min-h-[500px] flex-1 flex-col justify-center border-2 shadow-xl mb-4 px-14 py-6 lg:px-8 md:max-w-[623px] lg:max-w-[623px]">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <img
-            alt="Your Company"
-            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-            className="mx-auto h-10 w-auto"
-          />
+          <center>
+            <img className="h-16 rounded-xl" src={logo} alt="Your Company" />
+          </center>
           <h2 className="mt-2 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
             Create your account
           </h2>
