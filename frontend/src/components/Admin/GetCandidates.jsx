@@ -7,10 +7,6 @@ import party4 from "../../assets/gf-logo.jpg";
 import { API_BASE_URL } from "../../apiConfig";
 
 const GetCandidates = () => {
-  // const dispatch = useDispatch();
-  // const candidates = useSelector((store) => store.candidate);
-
-  // const navigate = useNavigate();
   const [candidates, setCandidates] = useState([]);
 
   const partyLogo = [party1, party2, party3, party4];
