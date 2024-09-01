@@ -27,6 +27,9 @@ const Header = () => {
                     alt="Your Company"
                   />
                 </div>
+
+
+                {/* Header for md and above sizes when the menu is closed */}
                 <div className="hidden md:block">
                   <div className="ml-10 flex items-baseline space-x-4">
                     {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
@@ -63,6 +66,9 @@ const Header = () => {
                   Sign out
                 </Link>
               </div>
+
+
+              {/* Header for sm size when the Menu is closed */}
               <div className="-mr-2 flex md:hidden">
                 <button
                   type="button"
@@ -74,7 +80,7 @@ const Header = () => {
                   <span className="absolute -inset-0.5"></span>
                   <span className="sr-only">Open main menu</span>
 
-                  {/* SVG for "Menu Closed" */}
+                  {/* SVG of 3 lines button for "Menu Closed" */}
                   <svg
                     className={`${isMenuOpen ? "hidden" : "block"} h-6 w-6`}
                     fill="none"
@@ -90,7 +96,7 @@ const Header = () => {
                     />
                   </svg>
 
-                  {/* SVG for "Menu Open" */}
+                  {/* SVG of cross button for "Menu Open" */}
                   <svg
                     className={`${isMenuOpen ? "block" : "hidden"} h-6 w-6`}
                     fill="none"
@@ -110,6 +116,8 @@ const Header = () => {
             </div>
           </div>
 
+
+          {/* Header for sm size when the Menu is Open */}
           {/* <!-- Mobile menu, show/hide based on menu state. --> */}
           <div
             className={`transform transition-transform duration-1000 ease-in-out ${
