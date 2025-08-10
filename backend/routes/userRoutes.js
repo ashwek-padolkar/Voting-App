@@ -30,7 +30,7 @@ router.post("/signup", async (req, res) => {
     // Creating new user
     const data = req.body; // Assuming the request body contains the user data.
 
-    console.log("Signup data: ", data);
+    // console.log("Signup data: ", data);
 
     // Create a new User document using the Mongoose model.
     const newUser = new User(data);
