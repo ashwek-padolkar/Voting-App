@@ -28,7 +28,6 @@ const Header = () => {
                   />
                 </div>
 
-
                 {/* Header for md and above sizes when the menu is closed */}
                 <div className="hidden md:block">
                   <div className="ml-10 flex items-baseline space-x-4">
@@ -48,11 +47,11 @@ const Header = () => {
                       My Profile
                     </Link>
                     <Link
-                      to="/results"
+                      to="/home/results"
                       className="rounded-md hover:bg-gray-900 px-4 py-3 text-sm font-medium text-white"
                       aria-current="page"
                     >
-                      Live Vote
+                      Vote Count
                     </Link>
                   </div>
                 </div>
@@ -66,7 +65,6 @@ const Header = () => {
                   Sign out
                 </Link>
               </div>
-
 
               {/* Header for sm size when the Menu is closed */}
               <div className="-mr-2 flex md:hidden">
@@ -115,7 +113,6 @@ const Header = () => {
               </div>
             </div>
           </div>
-
 
           {/* Header for sm size when the Menu is Open */}
           {/* <!-- Mobile menu, show/hide based on menu state. --> */}

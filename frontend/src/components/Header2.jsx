@@ -37,7 +37,7 @@ const Header2 = () => {
                     className="rounded-md hover:bg-gray-900 px-4 py-3 text-sm font-medium text-white"
                     aria-current="page"
                   >
-                    Live Count
+                    Vote Count
                   </Link>
                 </div>
               </div>

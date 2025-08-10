@@ -38,6 +38,10 @@ const router = createBrowserRouter([
         element: <MyProfile />,
       },
       {
+        path: "/home/results",
+        element: <Results />,
+      },
+      {
         path: "/home/vote",
         element: <Vote />,
       },

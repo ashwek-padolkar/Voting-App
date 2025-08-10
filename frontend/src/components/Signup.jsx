@@ -17,7 +17,7 @@ const Signup = () => {
   const addressElement = useRef();
   const aadharCardNumberElement = useRef();
   const passwordElement = useRef();
-  const roleElement = useRef();
+  // const roleElement = useRef();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,7 +30,7 @@ const Signup = () => {
       address: addressElement.current.value,
       aadharCardNumber: aadharCardNumberElement.current.value,
       password: passwordElement.current.value,
-      role: roleElement.current.value,
+      role: "voter", // Default role set to voter
     };
 
     try {
@@ -44,9 +44,10 @@ const Signup = () => {
 
       if (response.ok) {
         const data = await response.json();
-        const { token } = data;
+        const token = data.response.token;
+        const role = data.response.user.role;
 
-        dispatch(userSliceActions.setUserDetails(data));
+        dispatch(userSliceActions.setUserDetails(data.response.user));
 
         localStorage.setItem("authToken", token);
 
@@ -57,17 +58,13 @@ const Signup = () => {
         addressElement.current.value = "";
         aadharCardNumberElement.current.value = "";
         passwordElement.current.value = "";
-        roleElement.current.value = "";
+        // roleElement.current.value = "";
 
-        newUser.role === "voter" ? navigate("/home") : navigate("/admin");
+        role === "voter" ? navigate("/home") : navigate("/admin");
 
         alert("Registered successfully.");
       } else {
-        if (newUser.role === "admin") {
-          alert("Please select the role as 'Voter'");
-        } else {
-          alert("Account already exists. Please Login in.");
-        }
+        alert("Invalid username or password.");
       }
     } catch (error) {
       console.log("register: ", error);
@@ -223,7 +220,7 @@ const Signup = () => {
                 />
               </div>
             </div>
-            <div className="p-2 w-full sm:w-1/2">
+            {/* <div className="p-2 w-full sm:w-1/2">
               <div className="relative">
                 <label
                   htmlFor="role"
@@ -241,7 +238,7 @@ const Signup = () => {
                   <option value="admin">Admin</option>
                 </select>
               </div>
-            </div>
+            </div> */}
             <div className="p-2 w-full">
               <button
                 type="submit"
