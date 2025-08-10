@@ -2,8 +2,12 @@ import { useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/file.png";
 import { API_BASE_URL } from "../apiConfig";
+import { useDispatch } from "react-redux";
+import { userSliceActions } from "../store/userSlice";
 
 const Login = () => {
+  const dispatch = useDispatch();
+
   const navigate = useNavigate();
 
   const aadharCardNumberElement = useRef();
@@ -28,8 +32,10 @@ const Login = () => {
 
       if (response.ok) {
         const data = await response.json();
-        const { token } = data;
-        const { role } = data;
+        const token = data.response.token;
+        const role = data.response.user.role;
+
+        dispatch(userSliceActions.setUserDetails(data.response.user));
 
         localStorage.setItem("authToken", token);
 

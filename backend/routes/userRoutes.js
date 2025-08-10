@@ -30,24 +30,30 @@ router.post("/signup", async (req, res) => {
     // Creating new user
     const data = req.body; // Assuming the request body contains the user data.
 
-    console.log(data);
+    // console.log(data);
 
     // Create a new User document using the Mongoose model.
     const newUser = new User(data);
 
     // Save the new User to the database.
     const response = await newUser.save();
-    console.log("data saved");
+    // console.log("data saved");
 
     const payload = {
       id: response.id,
     };
 
-    console.log(JSON.stringify(payload));
+    // console.log(JSON.stringify(payload));
     const token = generateToken(payload);
-    console.log("Token is :", token);
+    // console.log("Token is :", token);
 
-    res.status(200).json({ response: response, token: token });
+    res.status(200).json({
+      response: {
+        user: savedUser,
+        token: token,
+      },
+      message: "Signup successful.",
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json({ error: "Internal Server Error" });
@@ -78,7 +84,13 @@ router.post("/login", async (req, res) => {
     const token = generateToken(payload);
 
     // return token as response
-    res.json({ token: token, role: user.role });
+    res.status(200).json({
+      response: {
+        user: user,
+        token: token,
+      },
+      message: "Login successful.",
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json({ error: "Internal Server Error" });

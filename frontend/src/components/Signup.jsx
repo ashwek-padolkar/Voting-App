@@ -2,8 +2,12 @@ import { useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/file.png";
 import { API_BASE_URL } from "../apiConfig";
+import { useDispatch } from "react-redux";
+import { userSliceActions } from "../store/userSlice";
 
 const Signup = () => {
+  const dispatch = useDispatch();
+
   const navigate = useNavigate();
 
   const nameElement = useRef();
@@ -41,6 +45,8 @@ const Signup = () => {
       if (response.ok) {
         const data = await response.json();
         const { token } = data;
+
+        dispatch(userSliceActions.setUserDetails(data));
 
         localStorage.setItem("authToken", token);
 
