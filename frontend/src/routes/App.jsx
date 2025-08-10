@@ -5,7 +5,7 @@ import Header2 from "../components/Header2";
 
 function App() {
   const location = useLocation();
-  const showAnotherHeader = ["/", "/login", "/results"];
+  const showAnotherHeader = ["/", "/signup", "/results"];
 
   return (
     <>
