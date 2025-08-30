@@ -28,12 +28,12 @@ const DeleteCandidate = () => {
       if (response.ok) {
         candidateIdElement.current.value = "";
 
-        alert("Candidate deleted successfully.");
+        toast.success("Candidate deleted successfully.");
       } else {
-        alert("Invalid Candidate id");
+        toast.error("Invalid Candidate id");
       }
     } catch (error) {
-      console.log("add candidate: ", error);
+      // console.log("add candidate: ", error);
     }
   };
 

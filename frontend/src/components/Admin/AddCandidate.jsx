@@ -38,10 +38,12 @@ const AddCandidate = () => {
         candidatePartyElement.current.value = "";
         candidateAgeElement.current.value = "";
 
-        alert("Candidate added successfully");
+        toast.success("Candidate added successfully");
+      } else {
+        toast.error("Something went wrong.");
       }
     } catch (error) {
-      console.log("add candidate: ", error);
+      // console.log("add candidate: ", error);
     }
   };
 

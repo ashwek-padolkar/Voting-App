@@ -62,12 +62,12 @@ const Signup = () => {
 
         role === "voter" ? navigate("/home") : navigate("/admin");
 
-        alert("Registered successfully.");
+        toast.success("Registered successfully.");
       } else {
-        alert("Invalid username or password.");
+        toast.error("Invalid username or password.");
       }
     } catch (error) {
-      console.log("register: ", error);
+      // console.log("register: ", error);
     }
   };
 

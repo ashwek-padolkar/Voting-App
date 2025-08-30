@@ -4,6 +4,8 @@ import logo from "../assets/file.png";
 import { API_BASE_URL } from "../apiConfig";
 import { useDispatch } from "react-redux";
 import { userSliceActions } from "../store/userSlice";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -44,9 +46,9 @@ const Login = () => {
 
         role === "voter" ? navigate("/home") : navigate("/admin");
 
-        alert("Login successfully.");
+        toast.success("Login successfully.");
       } else {
-        alert("Invalid username or password.");
+        toast.error("Invalid username or password.");
       }
     } catch (error) {
       console.log("login: ", error);

@@ -42,9 +42,9 @@ const UpdateCandidate = () => {
         candidatePartyElement.current.value = "";
         candidateAgeElement.current.value = "";
 
-        alert("Candidate updated successfully");
+        toast.success("Candidate updated successfully");
       } else {
-        alert("Invalid Candidate id");
+        toast.error("Invalid Candidate id");
       }
     } catch (error) {
       console.log("add candidate: ", error);

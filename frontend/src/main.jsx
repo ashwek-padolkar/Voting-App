@@ -18,6 +18,8 @@ import AdminDashboard from "./components/Admin/AdminDashboard.jsx";
 import GetCandidates from "./components/Admin/GetCandidates.jsx";
 import UpdateCandidate from "./components/Admin/UpdateCandidate.jsx";
 import DeleteCandidate from "./components/Admin/DeleteCandidate.jsx";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const router = createBrowserRouter([
   {
@@ -87,6 +89,7 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Provider store={votingStore}>
       <RouterProvider router={router}></RouterProvider>
+      <ToastContainer position="bottom-right" autoClose={3000} />
     </Provider>
   </StrictMode>
 );

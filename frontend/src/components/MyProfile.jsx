@@ -65,12 +65,14 @@ const MyProfile = () => {
         currentPasswordElement.current.value = "";
         newPasswordElement.current.value = "";
 
-        alert("Password updated successfully.");
+        toast.success("Password updated successfully.");
       } else {
-        alert("Incorrect Password.");
+        toast.error("Incorrect Password.");
+        currentPasswordElement.current.value = "";
+        newPasswordElement.current.value = "";
       }
     } catch (error) {
-      console.log("update password: ", error);
+      // console.log("update password: ", error);
     }
   };
 
