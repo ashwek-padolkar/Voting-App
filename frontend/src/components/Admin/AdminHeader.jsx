@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import logo from "../../assets/file.png";
 
 const AdminHeader = () => {
@@ -12,6 +12,9 @@ const AdminHeader = () => {
   const handleSignOut = () => {
     localStorage.removeItem("authToken");
   };
+
+  const location = useLocation();
+  const isActive = location.pathname === "/admin";
 
   return (
     <>
@@ -30,41 +33,64 @@ const AdminHeader = () => {
                 <div className="hidden md:block">
                   <div className="ml-10 flex items-baseline space-x-4">
                     {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
-                    <Link
+                    <NavLink
                       to="/admin"
-                      className="rounded-md hover:bg-gray-900 px-3 py-3 text-sm font-medium text-white"
-                      aria-current="page"
+                      className={`px-6 py-3 text-sm font-medium border-b-2 hover:border-white border-transparent text-white ${
+                        isActive
+                          ? "border-white text-white"
+                          : "border-transparent text-gray-300"
+                      }`}
                     >
                       Dashboard
-                    </Link>
-                    <Link
+                    </NavLink>
+                    <NavLink
                       to="/admin/add"
-                      className="rounded-md hover:bg-gray-900 px-3 py-3 text-sm font-medium text-white"
-                      aria-current="page"
+                      className={({ isActive }) =>
+                        `px-6 py-3 text-sm font-medium border-b-2 hover:border-white border-transparent text-white ${
+                          isActive
+                            ? "border-white text-white"
+                            : "border-transparent text-gray-300"
+                        }`
+                      }
                     >
                       Add Candidate
-                    </Link>
-                    <Link
+                    </NavLink>
+                    <NavLink
                       to="/admin/get"
-                      className="rounded-md hover:bg-gray-900 px-3 py-3 text-sm font-medium text-white"
-                      aria-current="page"
+                      className={({ isActive }) =>
+                        `px-6 py-3 text-sm font-medium border-b-2 hover:border-white border-transparent text-white ${
+                          isActive
+                            ? "border-white text-white"
+                            : "border-transparent text-gray-300"
+                        }`
+                      }
                     >
                       Get Candidates
-                    </Link>
-                    <Link
+                    </NavLink>
+                    <NavLink
                       to="/admin/update"
-                      className="rounded-md hover:bg-gray-900 px-3 py-3 text-sm font-medium text-white"
-                      aria-current="page"
+                      className={({ isActive }) =>
+                        `px-6 py-3 text-sm font-medium border-b-2 hover:border-white border-transparent text-white ${
+                          isActive
+                            ? "border-white text-white"
+                            : "border-transparent text-gray-300"
+                        }`
+                      }
                     >
                       Update
-                    </Link>
-                    <Link
+                    </NavLink>
+                    <NavLink
                       to="/admin/delete"
-                      className="rounded-md hover:bg-gray-900 px-3 py-3 text-sm font-medium text-white"
-                      aria-current="page"
+                      className={({ isActive }) =>
+                        `px-6 py-3 text-sm font-medium border-b-2 hover:border-white border-transparent text-white ${
+                          isActive
+                            ? "border-white text-white"
+                            : "border-transparent text-gray-300"
+                        }`
+                      }
                     >
                       Delete
-                    </Link>
+                    </NavLink>
                   </div>
                 </div>
               </div>
