@@ -58,7 +58,7 @@ const VoteComponent = () => {
       if (response.ok) {
         navigate("/home/vote/response");
       } else {
-        toast.error("Something went wrong.");
+        toast.error("Something went wrong.", { toastId: "voteError" });
       }
     } catch (error) {
       // console.log("vote: ", error);

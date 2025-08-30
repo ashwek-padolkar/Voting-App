@@ -46,9 +46,9 @@ const Login = () => {
 
         role === "voter" ? navigate("/home") : navigate("/admin");
 
-        toast.success("Login successfully.");
+        toast.success("Login successfully.", { toastId: "loginSuccess" });
       } else {
-        toast.error("Invalid username or password.");
+        toast.error("Invalid username or password.", { toastId: "loginError" });
       }
     } catch (error) {
       console.log("login: ", error);

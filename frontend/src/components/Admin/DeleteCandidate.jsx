@@ -28,9 +28,13 @@ const DeleteCandidate = () => {
       if (response.ok) {
         candidateIdElement.current.value = "";
 
-        toast.success("Candidate deleted successfully.");
+        toast.success("Candidate deleted successfully.", {
+          toastId: "candidateDeleteSuccess",
+        });
       } else {
-        toast.error("Invalid Candidate id");
+        toast.error("Something went wrong.", {
+          toastId: "candidateDeleteSuccess",
+        });
       }
     } catch (error) {
       // console.log("add candidate: ", error);

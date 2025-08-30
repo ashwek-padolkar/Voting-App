@@ -65,9 +65,11 @@ const MyProfile = () => {
         currentPasswordElement.current.value = "";
         newPasswordElement.current.value = "";
 
-        toast.success("Password updated successfully.");
+        toast.success("Password updated successfully.", {
+          toastId: "passwordSuccess",
+        });
       } else {
-        toast.error("Incorrect Password.");
+        toast.error("Incorrect Password.", { toastId: "passwordError" });
         currentPasswordElement.current.value = "";
         newPasswordElement.current.value = "";
       }
