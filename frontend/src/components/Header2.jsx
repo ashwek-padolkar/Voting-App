@@ -1,9 +1,12 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import logo from "../assets/file.png";
 import { useState } from "react";
 
 const Header2 = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const location = useLocation();
+  const isActive = location.pathname === "/" || location.pathname === "/signup";
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen); // Toggle the menu state
@@ -26,15 +29,12 @@ const Header2 = () => {
                 <div className="ml-10 flex items-baseline space-x-4">
                   {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
                   <NavLink
-                    to="/"
-                    className={({ isActive }) =>
-                      `px-6 py-3 text-sm font-medium border-b-2 hover:border-white border-transparent text-white ${
-                        isActive
-                          ? "border-white text-white"
-                          : "border-transparent text-gray-300"
-                      }`
-                    }
-                    aria-current="page"
+                    to="/signup"
+                    className={`px-6 py-3 text-sm font-medium border-b-2 hover:border-white border-transparent text-white ${
+                      isActive
+                        ? "border-white text-white"
+                        : "border-transparent text-gray-300"
+                    }`}
                   >
                     Sign up
                   </NavLink>
