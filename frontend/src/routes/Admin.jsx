@@ -4,7 +4,7 @@ import AdminHeader from "../components/Admin/AdminHeader";
 const Admin = () => {
   return (
     <div className="min-h-full">
-      <AdminHeader />
+      {/* <AdminHeader /> */}
       <Outlet />
     </div>
   );
